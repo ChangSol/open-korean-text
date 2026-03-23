@@ -23,8 +23,8 @@ import org.openkoreantext.processor.tokenizer.KoreanTokenizer.KoreanToken;
 import org.openkoreantext.processor.tokenizer.Sentence;
 import org.openkoreantext.processor.util.KoreanPos;
 import scala.collection.Iterator;
-import scala.collection.JavaConverters;
-import scala.collection.Seq;
+import scala.collection.immutable.Seq;
+import scala.jdk.javaapi.CollectionConverters;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -64,7 +64,7 @@ public final class OpenKoreanTextProcessorJava {
    * @param words List of user nouns.
    */
   public static void addNounsToDictionary(List<String> words) {
-    OpenKoreanTextProcessor.addNounsToDictionary(JavaConverters.asScalaBufferConverter(words).asScala());
+    OpenKoreanTextProcessor.addNounsToDictionary(CollectionConverters.asScala(words).toSeq());
   }
 
   /**
@@ -74,7 +74,7 @@ public final class OpenKoreanTextProcessorJava {
    * @param words Sequence of words to add.
    */
   public static void addWordsToDictionary(KoreanPosJava pos, List<String> words) {
-    OpenKoreanTextProcessor.addWordsToDictionary(KoreanPos.withName(pos.toString()), JavaConverters.asScalaBufferConverter(words).asScala());
+    OpenKoreanTextProcessor.addWordsToDictionary(KoreanPos.withName(pos.toString()), CollectionConverters.asScala(words).toSeq());
   }
 
   /**
@@ -84,7 +84,7 @@ public final class OpenKoreanTextProcessorJava {
    * @param words Sequence of words to add.
    */
   public static void removeWordFromDictionary(KoreanPosJava pos, List<String> words) {
-    OpenKoreanTextProcessor.removeWordsFromDictionary(KoreanPos.withName(pos.toString()), JavaConverters.asScalaBufferConverter(words).asScala());
+    OpenKoreanTextProcessor.removeWordsFromDictionary(KoreanPos.withName(pos.toString()), CollectionConverters.asScala(words).toSeq());
   }
 
   /**
@@ -169,7 +169,7 @@ public final class OpenKoreanTextProcessorJava {
 
   private static <T> List<T> toJavaList(Seq<T> seq) {
     ArrayList<T> javaList = new ArrayList<>();
-    javaList.addAll(JavaConverters.asJavaCollectionConverter(seq).asJavaCollection());
+    javaList.addAll(CollectionConverters.asJavaCollection(seq));
     return javaList;
   }
 
@@ -180,7 +180,7 @@ public final class OpenKoreanTextProcessorJava {
    * @return Detokenized string.
    */
   public static String detokenize(List<String> tokens) {
-    return OpenKoreanTextProcessor.detokenize(JavaConverters.asScalaBufferConverter(tokens).asScala());
+    return OpenKoreanTextProcessor.detokenize(CollectionConverters.asScala(tokens).toSeq());
   }
 
   /**

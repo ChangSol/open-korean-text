@@ -25,7 +25,7 @@ import java.util.zip.GZIPInputStream
 import org.openkoreantext.processor.util.KoreanConjugation._
 import org.openkoreantext.processor.util.KoreanPos._
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 import scala.io.Source
 
 /**
@@ -149,10 +149,10 @@ object KoreanDictionaryProvider {
     "noun/pokemon.txt", "noun/congress.txt", "noun/wikipedia_title_nouns.txt",
     "noun/brand.txt", "noun/fashion.txt", "noun/neologism.txt")
 
-  lazy val nameDictionary = Map(
-    'family_name -> readWords("substantives/family_names.txt"),
-    'given_name -> readWords("substantives/given_names.txt"),
-    'full_name -> readWords("noun/kpop.txt", "noun/foreign.txt", "noun/names.txt")
+  lazy val nameDictionary: Map[String, CharArraySet] = Map(
+    "family_name" -> readWords("substantives/family_names.txt"),
+    "given_name" -> readWords("substantives/given_names.txt"),
+    "full_name" -> readWords("noun/kpop.txt", "noun/foreign.txt", "noun/names.txt")
   )
 
   lazy val typoDictionaryByLength: Map[Int, Map[String, String]] = readWordMap("typos/typos.txt").groupBy {

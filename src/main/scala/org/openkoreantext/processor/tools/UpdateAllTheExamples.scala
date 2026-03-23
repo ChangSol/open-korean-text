@@ -11,7 +11,7 @@ object UpdateAllTheExamples {
     ))
   }
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     runTools(
       DeduplicateAndSortDictionaries,
       CreateConjugationExamples,

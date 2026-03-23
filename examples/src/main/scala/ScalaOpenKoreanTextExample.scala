@@ -21,7 +21,7 @@ import org.openkoreantext.processor.phrase_extractor.KoreanPhraseExtractor.Korea
 import org.openkoreantext.processor.tokenizer.KoreanTokenizer.KoreanToken
 
 object ScalaOpenKoreanTextExample {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val text = "한국어를 처리하는 예시입니닼ㅋㅋㅋㅋㅋ #한국어"
 
     // Normalize

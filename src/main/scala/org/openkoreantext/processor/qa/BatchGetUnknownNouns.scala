@@ -38,7 +38,7 @@ object BatchGetUnknownNouns {
 
   case class ChunkWithTweet(chunk: String, tweet: String)
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     if (args.length != 1) {
       println("The first arg should be an input file path of Korean tweets.")
       return

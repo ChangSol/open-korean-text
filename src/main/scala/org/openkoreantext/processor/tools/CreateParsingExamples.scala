@@ -30,7 +30,7 @@ import org.openkoreantext.processor.OpenKoreanTextProcessor._
 object CreateParsingExamples extends Runnable  {
   case class ParsingExample(text: String, parse: Seq[KoreanToken])
 
-  def run {
+  def run: Unit = {
     System.err.println("Reading the goldenset..")
 
     val parsedPairs = readFileByLineFromResources("example_chunks.txt").flatMap {
@@ -49,10 +49,10 @@ object CreateParsingExamples extends Runnable  {
     val out = new FileOutputStream(outputFile)
     parsedPairs.toSeq.sortBy(_.text).foreach {
       p =>
-        out.write(p.text.getBytes)
-        out.write("\t".getBytes)
-        out.write(p.parse.mkString("/").getBytes)
-        out.write("\n".getBytes)
+        out.write(p.text.getBytes("UTF-8"))
+        out.write("\t".getBytes("UTF-8"))
+        out.write(p.parse.mkString("/").getBytes("UTF-8"))
+        out.write("\n".getBytes("UTF-8"))
     }
     out.close()
 

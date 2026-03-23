@@ -27,7 +27,7 @@ import org.openkoreantext.processor.util.KoreanPos
 import org.openkoreantext.processor.util.KoreanPos._
 import org.openkoreantext.processor.util.KoreanSubstantive._
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 import scala.collection.mutable
 
 /**

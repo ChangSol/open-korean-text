@@ -24,7 +24,7 @@ import org.openkoreantext.processor.OpenKoreanTextProcessor._
  * A simple testing tool to try Korean tokenization.
  */
 object KoreanProcessorSandbox {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val s = "새로운 스테밍을 추가했었다. 트위터 주식 25% 상승. 주식 400원. 400원. $TWTR $200 20% 상승"
 
     val tokens = tokenize(s)

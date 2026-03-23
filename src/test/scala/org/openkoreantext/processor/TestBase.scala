@@ -22,8 +22,8 @@ import java.util.logging.{Level, Logger}
 
 import org.junit.runner.RunWith
 import org.openkoreantext.processor.util.KoreanDictionaryProvider._
-import org.scalatest.FunSuite
-import org.scalatest.junit.JUnitRunner
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatestplus.junit.JUnitRunner
 
 object TestBase {
 
@@ -36,7 +36,7 @@ object TestBase {
     t1 - t0
   }
 
-  def assertExamples(exampleFiles: String, log: Logger, f: (String => String)) {
+  def assertExamples(exampleFiles: String, log: Logger, f: (String => String)): Unit = {
     assert({
       val input = readFileByLineFromResources(exampleFiles)
 
@@ -79,4 +79,4 @@ object TestBase {
 }
 
 @RunWith(classOf[JUnitRunner])
-abstract class TestBase extends FunSuite
+abstract class TestBase extends AnyFunSuite

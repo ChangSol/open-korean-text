@@ -39,17 +39,17 @@ object KoreanSubstantive {
   }
 
   protected[processor] def isName(chunk: CharSequence): Boolean = {
-    if (nameDictionary('full_name).contains(chunk) ||
-      nameDictionary('given_name).contains(chunk)) return true
+    if (nameDictionary("full_name").contains(chunk) ||
+      nameDictionary("given_name").contains(chunk)) return true
 
     chunk.length match {
       case 3 => {
-        (nameDictionary('family_name).contains(chunk.charAt(0).toString) &&
-        nameDictionary('given_name).contains(chunk.subSequence(1, 3).toString))
+        (nameDictionary("family_name").contains(chunk.charAt(0).toString) &&
+        nameDictionary("given_name").contains(chunk.subSequence(1, 3).toString))
       }
       case 4 => {
-        (nameDictionary('family_name).contains(chunk.subSequence(0, 2).toString) &&
-          nameDictionary('given_name).contains(chunk.subSequence(2, 4).toString))
+        (nameDictionary("family_name").contains(chunk.subSequence(0, 2).toString) &&
+          nameDictionary("given_name").contains(chunk.subSequence(2, 4).toString))
       }
       case _ => false
     }

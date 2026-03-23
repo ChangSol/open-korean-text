@@ -39,7 +39,7 @@ object BatchTokenizeTweets {
   private val VERBOSE = true
   private val NON_NOUNS = Set(KoreanPos.Adjective, KoreanPos.Adverb, KoreanPos.Verb)
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     if (args.length != 1) {
       println("The first arg should be an input file of Korean tweets.")
       return

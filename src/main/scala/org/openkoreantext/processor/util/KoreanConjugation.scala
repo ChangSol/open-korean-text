@@ -21,7 +21,7 @@ package org.openkoreantext.processor.util
 import org.openkoreantext.processor.util.Hangul._
 import org.openkoreantext.processor.util.KoreanDictionaryProvider._
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 
 /**
  * Expands Korean verbs and adjectives to all possible conjugation forms.

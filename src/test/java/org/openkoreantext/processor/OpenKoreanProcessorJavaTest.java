@@ -25,7 +25,7 @@ import java.util.List;
 import org.junit.Test;
 import org.openkoreantext.processor.tokenizer.KoreanTokenizer;
 import org.openkoreantext.processor.tokenizer.Sentence;
-import scala.collection.Seq;
+import scala.collection.immutable.Seq;
 
 import static org.junit.Assert.assertEquals;
 

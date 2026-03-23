@@ -22,7 +22,7 @@ import org.openkoreantext.processor.TestBase
 import org.openkoreantext.processor.util.KoreanConjugation._
 import org.openkoreantext.processor.util.KoreanDictionaryProvider._
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 
 class KoreanConjugationTest extends TestBase {
 
@@ -44,7 +44,7 @@ class KoreanConjugationTest extends TestBase {
     isSameToGoldenset
   }
 
-  def assertConjugations(filename: String, isAdjective: Boolean) {
+  def assertConjugations(filename: String, isAdjective: Boolean): Unit = {
     val input = readWordsAsSeq(filename)
     val loaded: Seq[(String, String)] = input.map {
       s =>
