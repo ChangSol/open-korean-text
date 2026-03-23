@@ -1,7 +1,10 @@
-## open-korean-text [![Coverage Status](https://coveralls.io/repos/github/open-korean-text/open-korean-text/badge.svg?branch=master)](https://coveralls.io/github/open-korean-text/open-korean-text?branch=master) [![Build Status](https://travis-ci.org/open-korean-text/open-korean-text.svg?branch=master)](https://travis-ci.org/open-korean-text/open-korean-text) [![License](http://img.shields.io/:license-Apache%202-red.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
+## open-korean-text [![License](http://img.shields.io/:license-Apache%202-red.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt) [![Maven Central](https://img.shields.io/maven-central/v/io.github.changsol/open-korean-text)](https://central.sonatype.com/artifact/io.github.changsol/open-korean-text)
 
+Open-source Korean Text Processor / 오픈소스 한국어 처리기
 
-Open-source Korean Text Processor / 오픈소스 한국어 처리기 (Official Fork of twitter-korean-text)
+> **This is a fork of [open-korean-text/open-korean-text](https://github.com/open-korean-text/open-korean-text)** with the following changes:
+> - Scala 2.12 -> **Scala 2.13** migration
+> - Published under `io.github.changsol` groupId on Maven Central
 
 Scala/Java library to process Korean text with a Java wrapper. open-korean-text currently provides Korean normalization and tokenization. Please join our community at [Google Forum](https://groups.google.com/forum/#!forum/open-korean-text). The intent of this text processor is not limited to short tweet texts.
 
@@ -79,13 +82,18 @@ To include this in your Maven-based JVM project, add the following lines to your
 
 ```xml
   <dependency>
-    <groupId>org.openkoreantext</groupId>
+    <groupId>io.github.changsol</groupId>
     <artifactId>open-korean-text</artifactId>
-    <version>2.1.0</version>
+    <version>1.0.0</version>
   </dependency>
 ```
 
-Maven Repository: http://mvnrepository.com/artifact/org.openkoreantext/open-korean-text
+Gradle (Kotlin DSL):
+```kotlin
+implementation("io.github.changsol:open-korean-text:1.0.0")
+```
+
+Maven Central: https://central.sonatype.com/artifact/io.github.changsol/open-korean-text
 
 <!-- The maven site is available here http://twitter.github.io/open-korean-text/ and scaladocs are here http://twitter.github.io/open-korean-text/scaladocs/ -->
 
@@ -113,7 +121,7 @@ Clone the git repo and build using maven.
 / Git 전체를 클론하고 Maven을 이용하여 빌드합니다.
 
 ```bash
-git clone https://github.com/open-korean-text/open-korean-text.git
+git clone https://github.com/ChangSol/open-korean-text.git
 cd open-korean-text
 mvn compile
 ```

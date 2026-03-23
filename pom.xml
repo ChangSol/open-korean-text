@@ -21,7 +21,7 @@
   <groupId>io.github.changsol</groupId>
   <artifactId>open-korean-text</artifactId>
   <packaging>jar</packaging>
-  <version>2.4.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>Open Korean Text Processor</name>
   <url>https://github.com/ChangSol/open-korean-text</url>
   <description>Scala/Java library to process Korean text (fork with Scala 2.13 support)</description>
